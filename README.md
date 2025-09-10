@@ -1,54 +1,53 @@
-A machine learning project for recognizing cattle breeds from images, now featuring a Flask web application. This repository contains code, datasets, and instructions for training, evaluating, and deploying models to classify different cattle breeds.
+# Cattle Breed Recognition
+
+This project uses deep learning to recognize cattle breeds from images. It can also identify if an image is not of a cow or buffalo (e.g., a human or other animal) and labels such cases as **"Unknown"**.
 
 ## Features
 
-- Image classification using deep learning
-- Dataset preparation and augmentation
-- Model training and evaluation scripts
-- Results visualization
-- Flask web app for interactive predictions
+- Accurate breed classification for cows and buffaloes.
+- Handles non-cattle images by predicting "Unknown".
+- Detailed evaluation metrics and per-class performance.
+- Easy-to-use evaluation script.
 
-## Getting Started
+## How to Use
 
-1. Clone the repository:
-     ```bash
-     git clone https://github.com/yourusername/cattle-breed-recognition.git
-     ```
-2. Install dependencies:
-     ```bash
-     pip install -r requirements.txt
-     ```
-3. Prepare your dataset in the `data/` directory.
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/Mr-rxa/cattle_breed_recognition.git
+   cd cattle_breed_recognition
+   ```
 
-4. Train the model:
-     ```bash
-     python train.py
-     ```
+2. **Install dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
 
-## Running the Flask App
+3. **Prepare your dataset:**
+   - Place your processed dataset in the folder specified in `config.py`.
+   - Ensure the test images are in `processed_dataset/test/`.
 
-Start the web application to make predictions via a browser:
-```bash
-python app.py
-```
-Then open [http://localhost:5000](http://localhost:5000) in your browser.
+4. **Run evaluation:**
+   ```
+   python evaluate_model.py
+   ```
 
-## Dataset
+5. **View results:**
+   - Check the console for summary and per-class performance.
+   - See `evaluation_results.json` for detailed results.
 
-You can use publicly available cattle breed image datasets or collect your own. Place images in `data/train/` and `data/val/` folders, organized by breed.
+## SIH Presentation
 
-## Usage
+- The script automatically detects and labels non-cattle images as "Unknown".
+- Summary tables and metrics are printed for easy presentation.
+- Results are saved for further analysis.
 
-After training, use the model to predict cattle breeds from new images:
-```bash
-python predict.py --image path/to/image.jpg
-```
-Or use the Flask app for a web-based interface.
+## Project Structure
 
-## Contributing
+- `evaluate_model.py` — Evaluation script.
+- `config.py` — Configuration settings.
+- `requirements.txt` — Python dependencies.
+- `evaluation_results.json` — Saved evaluation results.
 
-Contributions are welcome! Please open issues or submit pull requests for improvements.
+## Contact
 
-## License
-
-This project is licensed under the MIT License.
+For questions or collaboration, contact [Mr-rxa](https://github.com/Mr-rxa).
